@@ -154,10 +154,10 @@ body {
 .reveal-text {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 150%;
     background-color: #17181a;
     top: 0;
-    left: 0;
+    left: -15%;
 }
 
 .cursuor {
@@ -166,4 +166,8 @@ body {
     border: 2px solid white;
     border-radius: 50%;
     position: absolute;
+}
+
+.scrollmagic-ppin-spacer {
+    position: static;
 }
