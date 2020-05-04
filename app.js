@@ -102,4 +102,40 @@ function animateSlides() {
     });
 }
 
+let cursor = document.querySelector('.cursor');
+let cursorText = cursor.querySelector('span');
+
+function cursorMove(event) {
+    cursor.style.top = event.pageY + 'px';
+    cursor.style.left = event.pageX + 'px';
+}
+
+function activeCursor(event) {
+    const item = event.target;
+    if (item.id === 'logo' || item.classList.contains('burger')) {
+        cursor.classList.add('nav-active');
+    } else {
+        cursor.classList.remove('nav-active');
+    }
+    if (item.classList.contains('explore')) {
+        cursor.classList.add('explore-active');
+        cursorText.innerText = 'Tap';
+        // blend title color with the hidden div color
+        gsap.to('.title-swipe', 1, {
+            y: '0%'
+        });
+    } else {
+        cursor.classList.remove('explore-active');
+        cursorText.innerText = '';
+        gsap.to('.title-swipe', 1, {
+            y: '100%'
+        });
+    }
+}
+
+
+window.addEventListener('mousemove', cursorMove);
+window.addEventListener('mouseover', activeCursor);
+
+
 animateSlides();
