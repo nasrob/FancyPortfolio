@@ -41,11 +41,11 @@ function animateSlides() {
             x: '100%'
         }, '-=0.75');
 
-        slideTimeLine.fromTo(nav, {
-            y: '-100%'
-        }, {
-            y: '0%'
-        }, '-=0.5');
+        // slideTimeLine.fromTo(nav, {
+        //     y: '-100%'
+        // }, {
+        //     y: '0%'
+        // }, '-=0.5');
 
         // Create an animation scene
         slideScene = new ScrollMagic.Scene({
@@ -199,12 +199,7 @@ barba.init({
             beforeEnter() {
                 logo.href = '../index.html';
                 detailAnimation();
-                gsap.fromTo('.nav-header', 1, {
-                    y: '100%'
-                }, {
-                    y: '0%',
-                    ease: 'power2.inOut'
-                });
+
             },
 
             beforeLeave() {
@@ -267,6 +262,12 @@ barba.init({
             }, {
                 opacity: 1
             });
+            timeLine.fromTo('.nav-header', 1, {
+                y: '-100%'
+            }, {
+                y: '0%',
+                ease: 'power2.inOut'
+            }, '-=1.5');
         }
 
     }]
